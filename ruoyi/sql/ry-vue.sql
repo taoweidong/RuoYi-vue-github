@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50647
 File Encoding         : 65001
 
-Date: 2020-03-01 17:02:42
+Date: 2020-08-23 23:37:55
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,12 +37,13 @@ CREATE TABLE `gen_table` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`table_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='代码生成业务表';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COMMENT='代码生成业务表';
 
 -- ----------------------------
 -- Records of gen_table
 -- ----------------------------
 INSERT INTO `gen_table` VALUES ('1', 'sys_job', '定时任务调度表', 'SysJob', 'crud', 'com.ruoyi.project.system', 'system', 'job', '定时任务调度', 'ruoyi', null, 'admin', '2020-03-01 16:38:06', '', null, null);
+INSERT INTO `gen_table` VALUES ('3', 't_resource_list', '资源信息表', 'ResourceList', 'crud', 'com.ruoyi.project.taowd', 'taowd', 'list', '资源信息', 'taoweidong', '{}', 'admin', '2020-08-23 12:35:40', '', '2020-08-23 22:43:04', '资源信息列表');
 
 -- ----------------------------
 -- Table structure for gen_table_column
@@ -72,7 +73,7 @@ CREATE TABLE `gen_table_column` (
   `update_by` varchar(64) DEFAULT '' COMMENT '更新者',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`column_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COMMENT='代码生成业务表字段';
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COMMENT='代码生成业务表字段';
 
 -- ----------------------------
 -- Records of gen_table_column
@@ -90,6 +91,13 @@ INSERT INTO `gen_table_column` VALUES ('10', '1', 'create_time', '创建时间',
 INSERT INTO `gen_table_column` VALUES ('11', '1', 'update_by', '更新者', 'varchar(64)', 'String', 'updateBy', '0', '0', null, '1', '1', null, null, 'EQ', 'input', '', '11', 'admin', '2020-03-01 16:38:06', '', null);
 INSERT INTO `gen_table_column` VALUES ('12', '1', 'update_time', '更新时间', 'datetime', 'Date', 'updateTime', '0', '0', null, '1', '1', null, null, 'EQ', 'datetime', '', '12', 'admin', '2020-03-01 16:38:06', '', null);
 INSERT INTO `gen_table_column` VALUES ('13', '1', 'remark', '备注信息', 'varchar(500)', 'String', 'remark', '0', '0', null, '1', '1', '1', null, 'EQ', 'textarea', '', '13', 'admin', '2020-03-01 16:38:06', '', null);
+INSERT INTO `gen_table_column` VALUES ('21', '3', 'id', '唯一标志', 'int(11)', 'Long', 'id', '1', '0', null, '1', null, null, null, 'EQ', 'input', '', '1', 'admin', '2020-08-23 12:35:40', '', '2020-08-23 22:43:04');
+INSERT INTO `gen_table_column` VALUES ('22', '3', 'ip', '环境IP', 'varchar(255)', 'String', 'ip', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '2', 'admin', '2020-08-23 12:35:40', '', '2020-08-23 22:43:04');
+INSERT INTO `gen_table_column` VALUES ('23', '3', 'type', '环境分类', 'varchar(255)', 'String', 'type', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'select', 'env_type', '3', 'admin', '2020-08-23 12:35:40', '', '2020-08-23 22:43:04');
+INSERT INTO `gen_table_column` VALUES ('24', '3', 'status', '状态', 'varchar(255)', 'String', 'status', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'radio', 'env_status', '4', 'admin', '2020-08-23 12:35:40', '', '2020-08-23 22:43:04');
+INSERT INTO `gen_table_column` VALUES ('25', '3', 'creater', '创建人', 'varchar(255)', 'String', 'creater', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '5', 'admin', '2020-08-23 12:35:40', '', '2020-08-23 22:43:04');
+INSERT INTO `gen_table_column` VALUES ('26', '3', 'createTime', '创建时间', 'datetime', 'Date', 'createTime', '0', '0', null, '1', '1', '1', null, 'EQ', 'datetime', '', '6', 'admin', '2020-08-23 12:35:40', '', '2020-08-23 22:43:04');
+INSERT INTO `gen_table_column` VALUES ('27', '3', 'updateTime', '更新时间', 'datetime', 'Date', 'updateTime', '0', '0', null, '1', '1', '1', null, 'EQ', 'datetime', '', '7', 'admin', '2020-08-23 12:35:40', '', '2020-08-23 22:43:04');
 
 -- ----------------------------
 -- Table structure for sys_config
@@ -172,7 +180,7 @@ CREATE TABLE `sys_dict_data` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`dict_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COMMENT='字典数据表';
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COMMENT='字典数据表';
 
 -- ----------------------------
 -- Records of sys_dict_data
@@ -205,6 +213,11 @@ INSERT INTO `sys_dict_data` VALUES ('25', '8', '生成代码', '8', 'sys_oper_ty
 INSERT INTO `sys_dict_data` VALUES ('26', '9', '清空数据', '9', 'sys_oper_type', '', 'danger', 'N', '0', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '清空操作');
 INSERT INTO `sys_dict_data` VALUES ('27', '1', '成功', '0', 'sys_common_status', '', 'primary', 'N', '0', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '正常状态');
 INSERT INTO `sys_dict_data` VALUES ('28', '2', '失败', '1', 'sys_common_status', '', 'danger', 'N', '0', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '停用状态');
+INSERT INTO `sys_dict_data` VALUES ('29', '0', '通讯', '通讯', 'env_type', null, null, 'N', '0', 'admin', '2020-08-23 22:33:38', '', null, null);
+INSERT INTO `sys_dict_data` VALUES ('30', '1', '传输', '传输', 'env_type', null, null, 'N', '0', 'admin', '2020-08-23 22:33:47', '', null, null);
+INSERT INTO `sys_dict_data` VALUES ('31', '0', '正常', '正常', 'env_status', null, null, 'N', '0', 'admin', '2020-08-23 22:35:05', '', null, null);
+INSERT INTO `sys_dict_data` VALUES ('32', '1', '借用', '借用', 'env_status', null, null, 'N', '0', 'admin', '2020-08-23 22:35:16', '', null, null);
+INSERT INTO `sys_dict_data` VALUES ('33', '2', '停用', '停用', 'env_status', null, null, 'N', '0', 'admin', '2020-08-23 22:35:26', '', null, null);
 
 -- ----------------------------
 -- Table structure for sys_dict_type
@@ -222,7 +235,7 @@ CREATE TABLE `sys_dict_type` (
   `remark` varchar(500) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`dict_id`),
   UNIQUE KEY `dict_type` (`dict_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COMMENT='字典类型表';
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COMMENT='字典类型表';
 
 -- ----------------------------
 -- Records of sys_dict_type
@@ -237,6 +250,8 @@ INSERT INTO `sys_dict_type` VALUES ('7', '通知类型', 'sys_notice_type', '0',
 INSERT INTO `sys_dict_type` VALUES ('8', '通知状态', 'sys_notice_status', '0', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '通知状态列表');
 INSERT INTO `sys_dict_type` VALUES ('9', '操作类型', 'sys_oper_type', '0', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '操作类型列表');
 INSERT INTO `sys_dict_type` VALUES ('10', '系统状态', 'sys_common_status', '0', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '登录状态列表');
+INSERT INTO `sys_dict_type` VALUES ('11', '环境类型', 'env_type', '0', 'admin', '2020-08-23 22:33:03', 'admin', '2020-08-23 22:33:15', '环境类型');
+INSERT INTO `sys_dict_type` VALUES ('12', '环境状态', 'env_status', '0', 'admin', '2020-08-23 22:34:49', '', null, null);
 
 -- ----------------------------
 -- Table structure for sys_job
@@ -301,7 +316,7 @@ CREATE TABLE `sys_logininfor` (
   `msg` varchar(255) DEFAULT '' COMMENT '提示消息',
   `login_time` datetime DEFAULT NULL COMMENT '访问时间',
   PRIMARY KEY (`info_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8mb4 COMMENT='系统访问记录';
+) ENGINE=InnoDB AUTO_INCREMENT=171 DEFAULT CHARSET=utf8mb4 COMMENT='系统访问记录';
 
 -- ----------------------------
 -- Records of sys_logininfor
@@ -313,6 +328,70 @@ INSERT INTO `sys_logininfor` VALUES ('103', 'test', '127.0.0.1', '内网IP', 'Fi
 INSERT INTO `sys_logininfor` VALUES ('104', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-03-01 16:11:14');
 INSERT INTO `sys_logininfor` VALUES ('105', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '1', '验证码错误', '2020-03-01 16:13:33');
 INSERT INTO `sys_logininfor` VALUES ('106', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-03-01 16:13:44');
+INSERT INTO `sys_logininfor` VALUES ('107', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-22 23:20:15');
+INSERT INTO `sys_logininfor` VALUES ('108', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-22 23:24:29');
+INSERT INTO `sys_logininfor` VALUES ('109', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-22 23:28:57');
+INSERT INTO `sys_logininfor` VALUES ('110', null, '127.0.0.1', '内网IP', 'Firefox 7', 'Windows 10', '1', '验证码已失效', '2020-08-23 00:05:31');
+INSERT INTO `sys_logininfor` VALUES ('111', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 12:13:50');
+INSERT INTO `sys_logininfor` VALUES ('112', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 12:34:51');
+INSERT INTO `sys_logininfor` VALUES ('113', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 12:48:57');
+INSERT INTO `sys_logininfor` VALUES ('114', 'admin', '127.0.0.1', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 13:00:04');
+INSERT INTO `sys_logininfor` VALUES ('115', 'admin', '192.168.1.103', '内网IP', 'Chrome', 'Windows 10', '0', '登录成功', '2020-08-23 13:05:03');
+INSERT INTO `sys_logininfor` VALUES ('116', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 13:32:09');
+INSERT INTO `sys_logininfor` VALUES ('117', 'admin', '127.0.0.1', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 13:32:29');
+INSERT INTO `sys_logininfor` VALUES ('118', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 14:19:58');
+INSERT INTO `sys_logininfor` VALUES ('119', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 14:26:05');
+INSERT INTO `sys_logininfor` VALUES ('120', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 14:27:16');
+INSERT INTO `sys_logininfor` VALUES ('121', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '1', '验证码错误', '2020-08-23 22:07:50');
+INSERT INTO `sys_logininfor` VALUES ('122', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 22:07:57');
+INSERT INTO `sys_logininfor` VALUES ('123', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 22:10:21');
+INSERT INTO `sys_logininfor` VALUES ('124', 'admin', '192.168.1.103', '内网IP', 'Chrome', 'Windows 10', '0', '登录成功', '2020-08-23 22:11:38');
+INSERT INTO `sys_logininfor` VALUES ('125', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 22:15:22');
+INSERT INTO `sys_logininfor` VALUES ('126', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-23 22:47:22');
+INSERT INTO `sys_logininfor` VALUES ('127', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 22:47:32');
+INSERT INTO `sys_logininfor` VALUES ('128', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-23 22:48:27');
+INSERT INTO `sys_logininfor` VALUES ('129', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 22:48:35');
+INSERT INTO `sys_logininfor` VALUES ('130', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-23 22:50:11');
+INSERT INTO `sys_logininfor` VALUES ('131', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 22:50:23');
+INSERT INTO `sys_logininfor` VALUES ('132', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-23 22:50:30');
+INSERT INTO `sys_logininfor` VALUES ('133', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 22:50:40');
+INSERT INTO `sys_logininfor` VALUES ('134', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-23 22:57:23');
+INSERT INTO `sys_logininfor` VALUES ('135', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 22:57:32');
+INSERT INTO `sys_logininfor` VALUES ('136', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-23 22:58:06');
+INSERT INTO `sys_logininfor` VALUES ('137', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 22:58:22');
+INSERT INTO `sys_logininfor` VALUES ('138', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-23 23:00:59');
+INSERT INTO `sys_logininfor` VALUES ('139', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 23:01:08');
+INSERT INTO `sys_logininfor` VALUES ('140', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-23 23:02:07');
+INSERT INTO `sys_logininfor` VALUES ('141', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 23:02:25');
+INSERT INTO `sys_logininfor` VALUES ('142', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-23 23:03:17');
+INSERT INTO `sys_logininfor` VALUES ('143', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 23:03:25');
+INSERT INTO `sys_logininfor` VALUES ('144', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-23 23:03:30');
+INSERT INTO `sys_logininfor` VALUES ('145', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 23:03:41');
+INSERT INTO `sys_logininfor` VALUES ('146', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-23 23:07:00');
+INSERT INTO `sys_logininfor` VALUES ('147', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 23:07:06');
+INSERT INTO `sys_logininfor` VALUES ('148', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-23 23:09:36');
+INSERT INTO `sys_logininfor` VALUES ('149', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 23:09:48');
+INSERT INTO `sys_logininfor` VALUES ('150', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-23 23:10:21');
+INSERT INTO `sys_logininfor` VALUES ('151', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '1', '验证码错误', '2020-08-23 23:10:28');
+INSERT INTO `sys_logininfor` VALUES ('152', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 23:10:35');
+INSERT INTO `sys_logininfor` VALUES ('153', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-23 23:11:06');
+INSERT INTO `sys_logininfor` VALUES ('154', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 23:11:17');
+INSERT INTO `sys_logininfor` VALUES ('155', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-23 23:24:46');
+INSERT INTO `sys_logininfor` VALUES ('156', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 23:25:04');
+INSERT INTO `sys_logininfor` VALUES ('157', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-23 23:27:42');
+INSERT INTO `sys_logininfor` VALUES ('158', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 23:27:48');
+INSERT INTO `sys_logininfor` VALUES ('159', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-23 23:27:57');
+INSERT INTO `sys_logininfor` VALUES ('160', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 23:28:18');
+INSERT INTO `sys_logininfor` VALUES ('161', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-23 23:29:06');
+INSERT INTO `sys_logininfor` VALUES ('162', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 23:29:11');
+INSERT INTO `sys_logininfor` VALUES ('163', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-23 23:29:32');
+INSERT INTO `sys_logininfor` VALUES ('164', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '1', '验证码错误', '2020-08-23 23:30:56');
+INSERT INTO `sys_logininfor` VALUES ('165', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '1', '验证码错误', '2020-08-23 23:31:03');
+INSERT INTO `sys_logininfor` VALUES ('166', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '1', '验证码错误', '2020-08-23 23:31:13');
+INSERT INTO `sys_logininfor` VALUES ('167', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 23:31:19');
+INSERT INTO `sys_logininfor` VALUES ('168', 'test', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '退出成功', '2020-08-23 23:33:38');
+INSERT INTO `sys_logininfor` VALUES ('169', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '1', '用户不存在/密码错误', '2020-08-23 23:33:48');
+INSERT INTO `sys_logininfor` VALUES ('170', 'admin', '192.168.1.103', '内网IP', 'Firefox 7', 'Windows 10', '0', '登录成功', '2020-08-23 23:33:59');
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -336,7 +415,7 @@ CREATE TABLE `sys_menu` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) DEFAULT '' COMMENT '备注',
   PRIMARY KEY (`menu_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1061 DEFAULT CHARSET=utf8mb4 COMMENT='菜单权限表';
+) ENGINE=InnoDB AUTO_INCREMENT=1066 DEFAULT CHARSET=utf8mb4 COMMENT='菜单权限表';
 
 -- ----------------------------
 -- Records of sys_menu
@@ -344,7 +423,7 @@ CREATE TABLE `sys_menu` (
 INSERT INTO `sys_menu` VALUES ('1', '系统管理', '0', '1', 'system', null, '1', 'M', '0', '', 'system', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '系统管理目录');
 INSERT INTO `sys_menu` VALUES ('2', '系统监控', '0', '2', 'monitor', null, '1', 'M', '0', '', 'monitor', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '系统监控目录');
 INSERT INTO `sys_menu` VALUES ('3', '系统工具', '0', '3', 'tool', null, '1', 'M', '0', '', 'tool', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '系统工具目录');
-INSERT INTO `sys_menu` VALUES ('4', '若依官网', '0', '4', 'http://ruoyi.vip', null, '0', 'M', '1', '', 'guide', 'admin', '2018-03-16 11:33:00', 'admin', '2020-03-01 16:35:17', '若依官网地址');
+INSERT INTO `sys_menu` VALUES ('4', 'GitHub', '0', '4', 'http://www.taoweidong.com/', null, '0', 'M', '1', '', 'guide', 'admin', '2018-03-16 11:33:00', 'admin', '2020-08-23 12:46:37', '若依官网地址');
 INSERT INTO `sys_menu` VALUES ('100', '用户管理', '1', '1', 'user', 'system/user/index', '1', 'C', '0', 'system:user:list', 'user', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '用户管理菜单');
 INSERT INTO `sys_menu` VALUES ('101', '角色管理', '1', '2', 'role', 'system/role/index', '1', 'C', '0', 'system:role:list', 'peoples', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '角色管理菜单');
 INSERT INTO `sys_menu` VALUES ('102', '菜单管理', '1', '4', 'menu', 'system/menu/index', '1', 'C', '0', 'system:menu:list', 'tree-table', 'admin', '2018-03-16 11:33:00', 'admin', '2020-03-01 16:59:28', '菜单管理菜单');
@@ -423,6 +502,11 @@ INSERT INTO `sys_menu` VALUES ('1057', '生成删除', '114', '3', '#', '', '1',
 INSERT INTO `sys_menu` VALUES ('1058', '导入代码', '114', '2', '#', '', '1', 'F', '0', 'tool:gen:import', '#', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '');
 INSERT INTO `sys_menu` VALUES ('1059', '预览代码', '114', '4', '#', '', '1', 'F', '0', 'tool:gen:preview', '#', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '');
 INSERT INTO `sys_menu` VALUES ('1060', '生成代码', '114', '5', '#', '', '1', 'F', '0', 'tool:gen:code', '#', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '');
+INSERT INTO `sys_menu` VALUES ('1061', '资源管理', '0', '3', 'taowd', null, '1', 'M', '0', '', 'international', 'admin', '2020-08-23 12:41:47', 'admin', '2020-08-23 22:25:38', '');
+INSERT INTO `sys_menu` VALUES ('1062', '环境管理', '1061', '0', 'list', 'taowd/list', '1', 'C', '0', 'taowd:list:list', 'eye-open', 'admin', '2020-08-23 12:42:37', 'admin', '2020-08-23 22:58:02', '');
+INSERT INTO `sys_menu` VALUES ('1063', '新增环境', '1062', '0', '', null, '1', 'F', '0', 'taowd:list:add', '#', 'admin', '2020-08-23 23:06:39', '', null, '');
+INSERT INTO `sys_menu` VALUES ('1064', '状态修改', '1062', '1', '', null, '1', 'F', '0', 'taowd:list:edit', '#', 'admin', '2020-08-23 23:24:30', '', null, '');
+INSERT INTO `sys_menu` VALUES ('1065', '环境查询', '1062', '2', '', null, '1', 'F', '0', 'taowd:list:query', '#', 'admin', '2020-08-23 23:28:50', '', null, '');
 
 -- ----------------------------
 -- Table structure for sys_notice
@@ -470,7 +554,7 @@ CREATE TABLE `sys_oper_log` (
   `error_msg` varchar(2000) DEFAULT '' COMMENT '错误消息',
   `oper_time` datetime DEFAULT NULL COMMENT '操作时间',
   PRIMARY KEY (`oper_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=117 DEFAULT CHARSET=utf8mb4 COMMENT='操作日志记录';
+) ENGINE=InnoDB AUTO_INCREMENT=170 DEFAULT CHARSET=utf8mb4 COMMENT='操作日志记录';
 
 -- ----------------------------
 -- Records of sys_oper_log
@@ -492,6 +576,59 @@ INSERT INTO `sys_oper_log` VALUES ('113', '菜单管理', '2', 'com.ruoyi.projec
 INSERT INTO `sys_oper_log` VALUES ('114', '代码生成', '6', 'com.ruoyi.project.tool.gen.controller.GenController.importTableSave()', 'POST', '1', 'admin', null, '/tool/gen/importTable', '192.168.1.103', '内网IP', 'sys_job', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-03-01 16:38:06');
 INSERT INTO `sys_oper_log` VALUES ('115', '菜单管理', '2', 'com.ruoyi.project.system.controller.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '192.168.1.103', '内网IP', '{\"visible\":\"0\",\"icon\":\"tree\",\"orderNum\":\"3\",\"menuName\":\"部门管理\",\"params\":{},\"parentId\":1,\"path\":\"dept\",\"component\":\"system/dept/index\",\"children\":[],\"createTime\":1521171180000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":103,\"menuType\":\"C\",\"perms\":\"system:dept:list\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-03-01 16:59:19');
 INSERT INTO `sys_oper_log` VALUES ('116', '菜单管理', '2', 'com.ruoyi.project.system.controller.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '192.168.1.103', '内网IP', '{\"visible\":\"0\",\"icon\":\"tree-table\",\"orderNum\":\"4\",\"menuName\":\"菜单管理\",\"params\":{},\"parentId\":1,\"path\":\"menu\",\"component\":\"system/menu/index\",\"children\":[],\"createTime\":1521171180000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":102,\"menuType\":\"C\",\"perms\":\"system:menu:list\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-03-01 16:59:28');
+INSERT INTO `sys_oper_log` VALUES ('117', '代码生成', '6', 'com.ruoyi.project.tool.gen.controller.GenController.importTableSave()', 'POST', '1', 'admin', null, '/tool/gen/importTable', '192.168.1.103', '内网IP', 't_resource_list', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 12:26:52');
+INSERT INTO `sys_oper_log` VALUES ('118', '代码生成', '8', 'com.ruoyi.project.tool.gen.controller.GenController.batchGenCode()', 'GET', '1', 'admin', null, '/tool/gen/batchGenCode', '192.168.1.103', '内网IP', '{}', 'null', '0', null, '2020-08-23 12:27:45');
+INSERT INTO `sys_oper_log` VALUES ('119', '代码生成', '8', 'com.ruoyi.project.tool.gen.controller.GenController.batchGenCode()', 'GET', '1', 'admin', null, '/tool/gen/batchGenCode', '192.168.1.103', '内网IP', '{}', 'null', '0', null, '2020-08-23 12:35:04');
+INSERT INTO `sys_oper_log` VALUES ('120', '代码生成', '3', 'com.ruoyi.project.tool.gen.controller.GenController.remove()', 'DELETE', '1', 'admin', null, '/tool/gen/2', '192.168.1.103', '内网IP', '{tableIds=2}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 12:35:31');
+INSERT INTO `sys_oper_log` VALUES ('121', '代码生成', '6', 'com.ruoyi.project.tool.gen.controller.GenController.importTableSave()', 'POST', '1', 'admin', null, '/tool/gen/importTable', '192.168.1.103', '内网IP', 't_resource_list', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 12:35:40');
+INSERT INTO `sys_oper_log` VALUES ('122', '代码生成', '2', 'com.ruoyi.project.tool.gen.controller.GenController.editSave()', 'PUT', '1', 'admin', null, '/tool/gen', '192.168.1.103', '内网IP', '{\"functionAuthor\":\"taoweidong\",\"columns\":[{\"usableColumn\":false,\"columnId\":21,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"id\",\"htmlType\":\"input\",\"edit\":false,\"query\":false,\"sort\":1,\"list\":false,\"params\":{},\"javaType\":\"Long\",\"queryType\":\"EQ\",\"columnType\":\"int(11)\",\"createBy\":\"admin\",\"isPk\":\"1\",\"createTime\":1598157340000,\"tableId\":3,\"pk\":true,\"columnName\":\"id\"},{\"usableColumn\":false,\"columnId\":22,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"ip\",\"htmlType\":\"input\",\"edit\":true,\"query\":true,\"columnComment\":\"环境IP\",\"isQuery\":\"1\",\"sort\":2,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1598157340000,\"isEdit\":\"1\",\"tableId\":3,\"pk\":false,\"columnName\":\"ip\"},{\"usableColumn\":false,\"columnId\":23,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"type\",\"htmlType\":\"select\",\"edit\":true,\"query\":true,\"columnComment\":\"环境分类(传输/通讯)\",\"isQuery\":\"1\",\"sort\":3,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1598157340000,\"isEdit\":\"1\",\"tableId\":3,\"pk\":false,\"columnName\":\"type\"},{\"usableColumn\":false,\"columnId\":24,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"status\",\"htmlType\":\"radio\",\"edit\":true,\"query\":true,\"columnComment\":\"状态(正常/借用/停用)\",\"isQuery\":\"1\",\"sort\":4,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1598157340000,\"isEdit\":\"1\",\"tableId\":3,\"pk\":false,\"columnName\":\"status\"},{\"usableColumn\":false,\"columnId\":25,\"isIncrement\":', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 12:36:11');
+INSERT INTO `sys_oper_log` VALUES ('123', '代码生成', '2', 'com.ruoyi.project.tool.gen.controller.GenController.editSave()', 'PUT', '1', 'admin', null, '/tool/gen', '192.168.1.103', '内网IP', '{\"functionAuthor\":\"taoweidong\",\"columns\":[{\"usableColumn\":false,\"columnId\":21,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"id\",\"htmlType\":\"input\",\"edit\":false,\"query\":false,\"updateTime\":1598157371000,\"sort\":1,\"list\":false,\"params\":{},\"javaType\":\"Long\",\"queryType\":\"EQ\",\"columnType\":\"int(11)\",\"createBy\":\"admin\",\"isPk\":\"1\",\"createTime\":1598157340000,\"tableId\":3,\"pk\":true,\"columnName\":\"id\"},{\"usableColumn\":false,\"columnId\":22,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"ip\",\"htmlType\":\"input\",\"edit\":true,\"query\":true,\"columnComment\":\"环境IP\",\"isQuery\":\"1\",\"updateTime\":1598157371000,\"sort\":2,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1598157340000,\"isEdit\":\"1\",\"tableId\":3,\"pk\":false,\"columnName\":\"ip\"},{\"usableColumn\":false,\"columnId\":23,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"type\",\"htmlType\":\"select\",\"edit\":true,\"query\":true,\"columnComment\":\"环境分类(传输/通讯)\",\"isQuery\":\"1\",\"updateTime\":1598157371000,\"sort\":3,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1598157340000,\"isEdit\":\"1\",\"tableId\":3,\"pk\":false,\"columnName\":\"type\"},{\"usableColumn\":false,\"columnId\":24,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"status\",\"htmlType\":\"radio\",\"edit\":true,\"query\":true,\"columnComment\":\"状态(正常/借用/停用)\",\"isQuery\":\"1\",\"updateTime\":1598157371000,\"sort\":4,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1598157340000,\"', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 12:36:57');
+INSERT INTO `sys_oper_log` VALUES ('124', '代码生成', '8', 'com.ruoyi.project.tool.gen.controller.GenController.batchGenCode()', 'GET', '1', 'admin', null, '/tool/gen/batchGenCode', '192.168.1.103', '内网IP', '{}', 'null', '0', null, '2020-08-23 12:37:11');
+INSERT INTO `sys_oper_log` VALUES ('125', '代码生成', '2', 'com.ruoyi.project.tool.gen.controller.GenController.editSave()', 'PUT', '1', 'admin', null, '/tool/gen', '192.168.1.103', '内网IP', '{\"functionAuthor\":\"taoweidong\",\"columns\":[{\"usableColumn\":false,\"columnId\":21,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"id\",\"htmlType\":\"input\",\"edit\":false,\"query\":false,\"updateTime\":1598157417000,\"sort\":1,\"list\":false,\"params\":{},\"javaType\":\"Long\",\"queryType\":\"EQ\",\"columnType\":\"int(11)\",\"createBy\":\"admin\",\"isPk\":\"1\",\"createTime\":1598157340000,\"tableId\":3,\"pk\":true,\"columnName\":\"id\"},{\"usableColumn\":false,\"columnId\":22,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"ip\",\"htmlType\":\"input\",\"edit\":true,\"query\":true,\"columnComment\":\"环境IP\",\"isQuery\":\"1\",\"updateTime\":1598157417000,\"sort\":2,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1598157340000,\"isEdit\":\"1\",\"tableId\":3,\"pk\":false,\"columnName\":\"ip\"},{\"usableColumn\":false,\"columnId\":23,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"type\",\"htmlType\":\"select\",\"edit\":true,\"query\":true,\"columnComment\":\"环境分类(传输/通讯)\",\"isQuery\":\"1\",\"updateTime\":1598157417000,\"sort\":3,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1598157340000,\"isEdit\":\"1\",\"tableId\":3,\"pk\":false,\"columnName\":\"type\"},{\"usableColumn\":false,\"columnId\":24,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"status\",\"htmlType\":\"radio\",\"edit\":true,\"query\":true,\"columnComment\":\"状态(正常/借用/停用)\",\"isQuery\":\"1\",\"updateTime\":1598157417000,\"sort\":4,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1598157340000,\"', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 12:37:35');
+INSERT INTO `sys_oper_log` VALUES ('126', '代码生成', '2', 'com.ruoyi.project.tool.gen.controller.GenController.editSave()', 'PUT', '1', 'admin', null, '/tool/gen', '192.168.1.103', '内网IP', '{\"functionAuthor\":\"taoweidong\",\"columns\":[{\"usableColumn\":false,\"columnId\":21,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"id\",\"htmlType\":\"input\",\"edit\":false,\"query\":false,\"columnComment\":\"唯一标志\",\"updateTime\":1598157455000,\"sort\":1,\"list\":false,\"params\":{},\"javaType\":\"Long\",\"queryType\":\"EQ\",\"columnType\":\"int(11)\",\"createBy\":\"admin\",\"isPk\":\"1\",\"createTime\":1598157340000,\"tableId\":3,\"pk\":true,\"columnName\":\"id\"},{\"usableColumn\":false,\"columnId\":22,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"ip\",\"htmlType\":\"input\",\"edit\":true,\"query\":true,\"columnComment\":\"环境IP\",\"isQuery\":\"1\",\"updateTime\":1598157455000,\"sort\":2,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1598157340000,\"isEdit\":\"1\",\"tableId\":3,\"pk\":false,\"columnName\":\"ip\"},{\"usableColumn\":false,\"columnId\":23,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"type\",\"htmlType\":\"select\",\"edit\":true,\"query\":true,\"columnComment\":\"环境分类(传输/通讯)\",\"isQuery\":\"1\",\"updateTime\":1598157455000,\"sort\":3,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1598157340000,\"isEdit\":\"1\",\"tableId\":3,\"pk\":false,\"columnName\":\"type\"},{\"usableColumn\":false,\"columnId\":24,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"status\",\"htmlType\":\"radio\",\"edit\":true,\"query\":true,\"columnComment\":\"状态(正常/借用/停用)\",\"isQuery\":\"1\",\"updateTime\":1598157455000,\"sort\":4,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"crea', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 12:37:50');
+INSERT INTO `sys_oper_log` VALUES ('127', '代码生成', '2', 'com.ruoyi.project.tool.gen.controller.GenController.editSave()', 'PUT', '1', 'admin', null, '/tool/gen', '192.168.1.103', '内网IP', '{\"functionAuthor\":\"taoweidong\",\"columns\":[{\"usableColumn\":false,\"columnId\":21,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"id\",\"htmlType\":\"input\",\"edit\":false,\"query\":false,\"columnComment\":\"唯一标志\",\"updateTime\":1598157470000,\"sort\":1,\"list\":false,\"params\":{},\"javaType\":\"Long\",\"queryType\":\"EQ\",\"columnType\":\"int(11)\",\"createBy\":\"admin\",\"isPk\":\"1\",\"createTime\":1598157340000,\"tableId\":3,\"pk\":true,\"columnName\":\"id\"},{\"usableColumn\":false,\"columnId\":22,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"ip\",\"htmlType\":\"input\",\"edit\":true,\"query\":true,\"columnComment\":\"环境IP\",\"isQuery\":\"1\",\"updateTime\":1598157470000,\"sort\":2,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1598157340000,\"isEdit\":\"1\",\"tableId\":3,\"pk\":false,\"columnName\":\"ip\"},{\"usableColumn\":false,\"columnId\":23,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"type\",\"htmlType\":\"select\",\"edit\":true,\"query\":true,\"columnComment\":\"环境分类(传输/通讯)\",\"isQuery\":\"1\",\"updateTime\":1598157470000,\"sort\":3,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1598157340000,\"isEdit\":\"1\",\"tableId\":3,\"pk\":false,\"columnName\":\"type\"},{\"usableColumn\":false,\"columnId\":24,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"status\",\"htmlType\":\"radio\",\"edit\":true,\"query\":true,\"columnComment\":\"状态(正常/借用/停用)\",\"isQuery\":\"1\",\"updateTime\":1598157470000,\"sort\":4,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"crea', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 12:38:31');
+INSERT INTO `sys_oper_log` VALUES ('128', '代码生成', '8', 'com.ruoyi.project.tool.gen.controller.GenController.batchGenCode()', 'GET', '1', 'admin', null, '/tool/gen/batchGenCode', '192.168.1.103', '内网IP', '{}', 'null', '0', null, '2020-08-23 12:38:35');
+INSERT INTO `sys_oper_log` VALUES ('129', '菜单管理', '1', 'com.ruoyi.project.system.controller.SysMenuController.add()', 'POST', '1', 'admin', null, '/system/menu', '192.168.1.103', '内网IP', '{\"visible\":\"0\",\"icon\":\"international\",\"orderNum\":\"0\",\"menuName\":\"资源管理\",\"params\":{},\"parentId\":0,\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"M\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 12:41:47');
+INSERT INTO `sys_oper_log` VALUES ('130', '菜单管理', '2', 'com.ruoyi.project.system.controller.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '192.168.1.103', '内网IP', '{\"visible\":\"0\",\"icon\":\"international\",\"orderNum\":\"3\",\"menuName\":\"资源管理\",\"params\":{},\"parentId\":0,\"path\":\"\",\"children\":[],\"createTime\":1598157707000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1061,\"menuType\":\"M\",\"perms\":\"\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 12:41:59');
+INSERT INTO `sys_oper_log` VALUES ('131', '菜单管理', '1', 'com.ruoyi.project.system.controller.SysMenuController.add()', 'POST', '1', 'admin', null, '/system/menu', '192.168.1.103', '内网IP', '{\"visible\":\"0\",\"icon\":\"eye-open\",\"orderNum\":\"0\",\"menuName\":\"环境管理\",\"params\":{},\"parentId\":1061,\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"M\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 12:42:37');
+INSERT INTO `sys_oper_log` VALUES ('132', '菜单管理', '2', 'com.ruoyi.project.system.controller.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '192.168.1.103', '内网IP', '{\"visible\":\"1\",\"icon\":\"guide\",\"orderNum\":\"4\",\"menuName\":\"GitHub\",\"params\":{},\"parentId\":0,\"path\":\"http://www.taoweidong.com/\",\"children\":[],\"createTime\":1521171180000,\"updateBy\":\"admin\",\"isFrame\":\"0\",\"menuId\":4,\"menuType\":\"M\",\"perms\":\"\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 12:46:37');
+INSERT INTO `sys_oper_log` VALUES ('133', '菜单管理', '2', 'com.ruoyi.project.system.controller.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '192.168.1.103', '内网IP', '{\"visible\":\"0\",\"icon\":\"eye-open\",\"orderNum\":\"0\",\"menuName\":\"环境管理\",\"params\":{},\"parentId\":1061,\"path\":\"resource\",\"children\":[],\"createTime\":1598157757000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1062,\"menuType\":\"M\",\"perms\":\"\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:21:01');
+INSERT INTO `sys_oper_log` VALUES ('134', '代码生成', '8', 'com.ruoyi.project.tool.gen.controller.GenController.batchGenCode()', 'GET', '1', 'admin', null, '/tool/gen/batchGenCode', '192.168.1.103', '内网IP', '{}', 'null', '0', null, '2020-08-23 22:23:26');
+INSERT INTO `sys_oper_log` VALUES ('135', '菜单管理', '2', 'com.ruoyi.project.system.controller.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '192.168.1.103', '内网IP', '{\"visible\":\"0\",\"icon\":\"international\",\"orderNum\":\"3\",\"menuName\":\"资源管理\",\"params\":{},\"parentId\":0,\"path\":\"taowd\",\"children\":[],\"createTime\":1598157707000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1061,\"menuType\":\"M\",\"perms\":\"\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:25:38');
+INSERT INTO `sys_oper_log` VALUES ('136', '菜单管理', '2', 'com.ruoyi.project.system.controller.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '192.168.1.103', '内网IP', '{\"visible\":\"0\",\"icon\":\"eye-open\",\"orderNum\":\"0\",\"menuName\":\"环境管理\",\"params\":{},\"parentId\":1061,\"path\":\"list\",\"children\":[],\"createTime\":1598157757000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1062,\"menuType\":\"M\",\"perms\":\"\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:26:41');
+INSERT INTO `sys_oper_log` VALUES ('137', '菜单管理', '2', 'com.ruoyi.project.system.controller.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '192.168.1.103', '内网IP', '{\"visible\":\"0\",\"icon\":\"eye-open\",\"orderNum\":\"0\",\"menuName\":\"环境管理\",\"params\":{},\"parentId\":1061,\"path\":\"list\",\"component\":\"taowd/list\",\"children\":[],\"createTime\":1598157757000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1062,\"menuType\":\"C\",\"perms\":\"\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:31:37');
+INSERT INTO `sys_oper_log` VALUES ('138', '字典类型', '1', 'com.ruoyi.project.system.controller.SysDictTypeController.add()', 'POST', '1', 'admin', null, '/system/dict/type', '192.168.1.103', '内网IP', '{\"remark\":\"环境类型\",\"params\":{},\"dictType\":\"env_type\",\"createBy\":\"admin\",\"dictName\":\"环境类型\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:33:03');
+INSERT INTO `sys_oper_log` VALUES ('139', '字典类型', '2', 'com.ruoyi.project.system.controller.SysDictTypeController.edit()', 'PUT', '1', 'admin', null, '/system/dict/type', '192.168.1.103', '内网IP', '{\"remark\":\"环境类型\",\"dictId\":11,\"params\":{},\"dictType\":\"env_type\",\"createBy\":\"admin\",\"createTime\":1598193183000,\"updateBy\":\"admin\",\"dictName\":\"环境类型\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:33:15');
+INSERT INTO `sys_oper_log` VALUES ('140', '字典数据', '1', 'com.ruoyi.project.system.controller.SysDictDataController.add()', 'POST', '1', 'admin', null, '/system/dict/data', '192.168.1.103', '内网IP', '{\"dictValue\":\"通讯\",\"dictSort\":0,\"params\":{},\"dictType\":\"env_type\",\"dictLabel\":\"通讯\",\"createBy\":\"admin\",\"default\":false,\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:33:38');
+INSERT INTO `sys_oper_log` VALUES ('141', '字典数据', '1', 'com.ruoyi.project.system.controller.SysDictDataController.add()', 'POST', '1', 'admin', null, '/system/dict/data', '192.168.1.103', '内网IP', '{\"dictValue\":\"传输\",\"dictSort\":1,\"params\":{},\"dictType\":\"env_type\",\"dictLabel\":\"传输\",\"createBy\":\"admin\",\"default\":false,\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:33:47');
+INSERT INTO `sys_oper_log` VALUES ('142', '代码生成', '2', 'com.ruoyi.project.tool.gen.controller.GenController.editSave()', 'PUT', '1', 'admin', null, '/tool/gen', '192.168.1.103', '内网IP', '{\"functionAuthor\":\"taoweidong\",\"columns\":[{\"usableColumn\":false,\"columnId\":21,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"id\",\"htmlType\":\"input\",\"edit\":false,\"query\":false,\"columnComment\":\"唯一标志\",\"updateTime\":1598157511000,\"sort\":1,\"list\":false,\"params\":{},\"javaType\":\"Long\",\"queryType\":\"EQ\",\"columnType\":\"int(11)\",\"createBy\":\"admin\",\"isPk\":\"1\",\"createTime\":1598157340000,\"tableId\":3,\"pk\":true,\"columnName\":\"id\"},{\"usableColumn\":false,\"columnId\":22,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"ip\",\"htmlType\":\"input\",\"edit\":true,\"query\":true,\"columnComment\":\"环境IP\",\"isQuery\":\"1\",\"updateTime\":1598157511000,\"sort\":2,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1598157340000,\"isEdit\":\"1\",\"tableId\":3,\"pk\":false,\"columnName\":\"ip\"},{\"usableColumn\":false,\"columnId\":23,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"env_type\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"type\",\"htmlType\":\"select\",\"edit\":true,\"query\":true,\"columnComment\":\"环境分类\",\"isQuery\":\"1\",\"updateTime\":1598157511000,\"sort\":3,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1598157340000,\"isEdit\":\"1\",\"tableId\":3,\"pk\":false,\"columnName\":\"type\"},{\"usableColumn\":false,\"columnId\":24,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"status\",\"htmlType\":\"radio\",\"edit\":true,\"query\":true,\"columnComment\":\"状态\",\"isQuery\":\"1\",\"updateTime\":1598157511000,\"sort\":4,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:34:21');
+INSERT INTO `sys_oper_log` VALUES ('143', '字典类型', '1', 'com.ruoyi.project.system.controller.SysDictTypeController.add()', 'POST', '1', 'admin', null, '/system/dict/type', '192.168.1.103', '内网IP', '{\"params\":{},\"dictType\":\"env_status\",\"createBy\":\"admin\",\"dictName\":\"环境状态\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:34:49');
+INSERT INTO `sys_oper_log` VALUES ('144', '字典数据', '1', 'com.ruoyi.project.system.controller.SysDictDataController.add()', 'POST', '1', 'admin', null, '/system/dict/data', '192.168.1.103', '内网IP', '{\"dictValue\":\"正常\",\"dictSort\":0,\"params\":{},\"dictType\":\"env_status\",\"dictLabel\":\"正常\",\"createBy\":\"admin\",\"default\":false,\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:35:05');
+INSERT INTO `sys_oper_log` VALUES ('145', '字典数据', '1', 'com.ruoyi.project.system.controller.SysDictDataController.add()', 'POST', '1', 'admin', null, '/system/dict/data', '192.168.1.103', '内网IP', '{\"dictValue\":\"借用\",\"dictSort\":1,\"params\":{},\"dictType\":\"env_status\",\"dictLabel\":\"借用\",\"createBy\":\"admin\",\"default\":false,\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:35:16');
+INSERT INTO `sys_oper_log` VALUES ('146', '字典数据', '1', 'com.ruoyi.project.system.controller.SysDictDataController.add()', 'POST', '1', 'admin', null, '/system/dict/data', '192.168.1.103', '内网IP', '{\"dictValue\":\"停用\",\"dictSort\":2,\"params\":{},\"dictType\":\"env_status\",\"dictLabel\":\"停用\",\"createBy\":\"admin\",\"default\":false,\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:35:26');
+INSERT INTO `sys_oper_log` VALUES ('147', '代码生成', '2', 'com.ruoyi.project.tool.gen.controller.GenController.editSave()', 'PUT', '1', 'admin', null, '/tool/gen', '192.168.1.103', '内网IP', '{\"functionAuthor\":\"taoweidong\",\"columns\":[{\"usableColumn\":false,\"columnId\":21,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"id\",\"htmlType\":\"input\",\"edit\":false,\"query\":false,\"columnComment\":\"唯一标志\",\"updateTime\":1598193261000,\"sort\":1,\"list\":false,\"params\":{},\"javaType\":\"Long\",\"queryType\":\"EQ\",\"columnType\":\"int(11)\",\"createBy\":\"admin\",\"isPk\":\"1\",\"createTime\":1598157340000,\"tableId\":3,\"pk\":true,\"columnName\":\"id\"},{\"usableColumn\":false,\"columnId\":22,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"ip\",\"htmlType\":\"input\",\"edit\":true,\"query\":true,\"columnComment\":\"环境IP\",\"isQuery\":\"1\",\"updateTime\":1598193261000,\"sort\":2,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1598157340000,\"isEdit\":\"1\",\"tableId\":3,\"pk\":false,\"columnName\":\"ip\"},{\"usableColumn\":false,\"columnId\":23,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"env_type\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"type\",\"htmlType\":\"select\",\"edit\":true,\"query\":true,\"columnComment\":\"环境分类\",\"isQuery\":\"1\",\"updateTime\":1598193261000,\"sort\":3,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1598157340000,\"isEdit\":\"1\",\"tableId\":3,\"pk\":false,\"columnName\":\"type\"},{\"usableColumn\":false,\"columnId\":24,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"env_status\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"status\",\"htmlType\":\"radio\",\"edit\":true,\"query\":true,\"columnComment\":\"状态\",\"isQuery\":\"1\",\"updateTime\":1598193261000,\"sort\":4,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"cre', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:35:40');
+INSERT INTO `sys_oper_log` VALUES ('148', '代码生成', '8', 'com.ruoyi.project.tool.gen.controller.GenController.batchGenCode()', 'GET', '1', 'admin', null, '/tool/gen/batchGenCode', '192.168.1.103', '内网IP', '{}', 'null', '0', null, '2020-08-23 22:35:44');
+INSERT INTO `sys_oper_log` VALUES ('149', '资源信息', '1', 'com.ruoyi.project.taowd.controller.ResourceListController.add()', 'POST', '1', 'admin', null, '/taowd/list', '192.168.1.103', '内网IP', '{\"ip\":\"9.88.40.205\",\"params\":{},\"type\":\"通讯\",\"createTime\":1598193439025,\"creater\":\"taowd\",\"status\":\"借用\"}', 'null', '1', '\r\n### Error updating database.  Cause: java.sql.SQLException: Field \'id\' doesn\'t have a default value\r\n### The error may involve com.ruoyi.project.taowd.mapper.ResourceListMapper.insertResourceList-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_resource_list          ( ip,             type,             status,             creater,             createTime )           values ( ?,             ?,             ?,             ?,             ? )\r\n### Cause: java.sql.SQLException: Field \'id\' doesn\'t have a default value\n; Field \'id\' doesn\'t have a default value; nested exception is java.sql.SQLException: Field \'id\' doesn\'t have a default value', '2020-08-23 22:37:20');
+INSERT INTO `sys_oper_log` VALUES ('150', '资源信息', '1', 'com.ruoyi.project.taowd.controller.ResourceListController.add()', 'POST', '1', 'admin', null, '/taowd/list', '192.168.1.103', '内网IP', '{\"ip\":\"7.88.20.205\",\"params\":{},\"type\":\"通讯\",\"createTime\":1598193531201,\"creater\":\"taowd\",\"status\":\"正常\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:38:53');
+INSERT INTO `sys_oper_log` VALUES ('151', '资源信息', '5', 'com.ruoyi.project.taowd.controller.ResourceListController.export()', 'GET', '1', 'admin', null, '/taowd/list/export', '192.168.1.103', '内网IP', '{}', '{\"msg\":\"be57ff4a-b8d1-4fb8-9e0b-5714de694fa0_list.xlsx\",\"code\":200}', '0', null, '2020-08-23 22:40:56');
+INSERT INTO `sys_oper_log` VALUES ('152', '代码生成', '2', 'com.ruoyi.project.tool.gen.controller.GenController.editSave()', 'PUT', '1', 'admin', null, '/tool/gen', '192.168.1.103', '内网IP', '{\"functionAuthor\":\"taoweidong\",\"columns\":[{\"usableColumn\":false,\"columnId\":21,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"id\",\"htmlType\":\"input\",\"edit\":false,\"query\":false,\"columnComment\":\"唯一标志\",\"updateTime\":1598193340000,\"sort\":1,\"list\":false,\"params\":{},\"javaType\":\"Long\",\"queryType\":\"EQ\",\"columnType\":\"int(11)\",\"createBy\":\"admin\",\"isPk\":\"1\",\"createTime\":1598157340000,\"tableId\":3,\"pk\":true,\"columnName\":\"id\"},{\"usableColumn\":false,\"columnId\":22,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":true,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"isRequired\":\"1\",\"javaField\":\"ip\",\"htmlType\":\"input\",\"edit\":true,\"query\":true,\"columnComment\":\"环境IP\",\"isQuery\":\"1\",\"updateTime\":1598193340000,\"sort\":2,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1598157340000,\"isEdit\":\"1\",\"tableId\":3,\"pk\":false,\"columnName\":\"ip\"},{\"usableColumn\":false,\"columnId\":23,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"env_type\",\"required\":true,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"isRequired\":\"1\",\"javaField\":\"type\",\"htmlType\":\"select\",\"edit\":true,\"query\":true,\"columnComment\":\"环境分类\",\"isQuery\":\"1\",\"updateTime\":1598193340000,\"sort\":3,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1598157340000,\"isEdit\":\"1\",\"tableId\":3,\"pk\":false,\"columnName\":\"type\"},{\"usableColumn\":false,\"columnId\":24,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"env_status\",\"required\":true,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"isRequired\":\"1\",\"javaField\":\"status\",\"htmlType\":\"radio\",\"edit\":true,\"query\":true,\"columnComment\":\"状态\",\"isQuery\":\"1\",\"updateTime\":1598193340000,\"sort\":4,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:43:04');
+INSERT INTO `sys_oper_log` VALUES ('153', '角色管理', '2', 'com.ruoyi.project.system.controller.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '192.168.1.103', '内网IP', '{\"flag\":false,\"roleId\":2,\"admin\":false,\"remark\":\"普通角色\",\"dataScope\":\"2\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"createTime\":1521171180000,\"updateBy\":\"admin\",\"roleKey\":\"common\",\"roleName\":\"普通角色\",\"menuIds\":[1061,1062,4],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:46:26');
+INSERT INTO `sys_oper_log` VALUES ('154', '用户管理', '2', 'com.ruoyi.project.system.controller.SysUserController.edit()', 'PUT', '1', 'admin', null, '/system/user', '192.168.1.103', '内网IP', '{\"roles\":[{\"flag\":false,\"roleId\":2,\"admin\":false,\"dataScope\":\"2\",\"params\":{},\"roleSort\":\"2\",\"roleKey\":\"common\",\"roleName\":\"普通角色\",\"status\":\"0\"}],\"phonenumber\":\"15769229466\",\"admin\":false,\"remark\":\"测试用户\",\"delFlag\":\"0\",\"password\":\"\",\"updateBy\":\"admin\",\"postIds\":[4],\"loginIp\":\"\",\"email\":\"456456@outlook.com\",\"nickName\":\"测试\",\"sex\":\"0\",\"deptId\":103,\"avatar\":\"\",\"dept\":{\"deptName\":\"研发部门\",\"leader\":\"若依\",\"deptId\":103,\"orderNum\":\"1\",\"params\":{},\"parentId\":101,\"children\":[],\"status\":\"0\"},\"params\":{},\"userName\":\"test\",\"userId\":100,\"createBy\":\"admin\",\"roleIds\":[2],\"createTime\":1581495150000,\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:46:59');
+INSERT INTO `sys_oper_log` VALUES ('155', '用户管理', '2', 'com.ruoyi.project.system.controller.SysUserController.resetPwd()', 'PUT', '1', 'admin', null, '/system/user/resetPwd', '192.168.1.103', '内网IP', '{\"admin\":false,\"password\":\"$2a$10$.WlvM8hvxR.yvh1nwVNXjOVw1JsffgNRik4Osg6dAfM5fSxuZksN6\",\"updateBy\":\"admin\",\"params\":{},\"userId\":100}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:47:17');
+INSERT INTO `sys_oper_log` VALUES ('156', '用户管理', '2', 'com.ruoyi.project.system.controller.SysUserController.edit()', 'PUT', '1', 'admin', null, '/system/user', '192.168.1.103', '内网IP', '{\"roles\":[{\"flag\":false,\"roleId\":2,\"admin\":false,\"dataScope\":\"2\",\"params\":{},\"roleSort\":\"2\",\"roleKey\":\"common\",\"roleName\":\"普通角色\",\"status\":\"0\"}],\"phonenumber\":\"15769229466\",\"admin\":false,\"remark\":\"测试用户\",\"delFlag\":\"0\",\"password\":\"\",\"updateBy\":\"admin\",\"postIds\":[4],\"loginIp\":\"\",\"email\":\"456456@outlook.com\",\"nickName\":\"测试\",\"sex\":\"0\",\"deptId\":103,\"avatar\":\"\",\"dept\":{\"deptName\":\"研发部门\",\"leader\":\"若依\",\"deptId\":103,\"orderNum\":\"1\",\"params\":{},\"parentId\":101,\"children\":[],\"status\":\"0\"},\"params\":{},\"userName\":\"test\",\"userId\":100,\"createBy\":\"admin\",\"roleIds\":[2],\"createTime\":1581495150000,\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:49:03');
+INSERT INTO `sys_oper_log` VALUES ('157', '菜单管理', '2', 'com.ruoyi.project.system.controller.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '192.168.1.103', '内网IP', '{\"visible\":\"0\",\"icon\":\"eye-open\",\"orderNum\":\"0\",\"menuName\":\"环境管理\",\"params\":{},\"parentId\":1061,\"path\":\"list\",\"component\":\"taowd/list\",\"children\":[],\"createTime\":1598157757000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1062,\"menuType\":\"C\",\"perms\":\"taowd:list\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:49:54');
+INSERT INTO `sys_oper_log` VALUES ('158', '菜单管理', '2', 'com.ruoyi.project.system.controller.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '192.168.1.103', '内网IP', '{\"visible\":\"0\",\"icon\":\"eye-open\",\"orderNum\":\"0\",\"menuName\":\"环境管理\",\"params\":{},\"parentId\":1061,\"path\":\"list\",\"component\":\"taowd/list\",\"children\":[],\"createTime\":1598157757000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":1062,\"menuType\":\"C\",\"perms\":\"taowd:list:list\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 22:58:02');
+INSERT INTO `sys_oper_log` VALUES ('159', '个人信息', '2', 'com.ruoyi.project.system.controller.SysProfileController.updatePwd()', 'PUT', '1', 'admin', null, '/system/user/profile/updatePwd', '192.168.1.103', '内网IP', 'admin 123456', '{\"msg\":\"修改密码失败，旧密码错误\",\"code\":500}', '0', null, '2020-08-23 23:01:36');
+INSERT INTO `sys_oper_log` VALUES ('160', '个人信息', '2', 'com.ruoyi.project.system.controller.SysProfileController.updatePwd()', 'PUT', '1', 'admin', null, '/system/user/profile/updatePwd', '192.168.1.103', '内网IP', '123456 123456', '{\"msg\":\"修改密码失败，旧密码错误\",\"code\":500}', '0', null, '2020-08-23 23:01:40');
+INSERT INTO `sys_oper_log` VALUES ('161', '菜单管理', '1', 'com.ruoyi.project.system.controller.SysMenuController.add()', 'POST', '1', 'admin', null, '/system/menu', '192.168.1.103', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"0\",\"menuName\":\"新增环境\",\"params\":{},\"parentId\":1062,\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"F\",\"perms\":\"taowd:list:add\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 23:06:39');
+INSERT INTO `sys_oper_log` VALUES ('162', '角色管理', '2', 'com.ruoyi.project.system.controller.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '192.168.1.103', '内网IP', '{\"flag\":false,\"roleId\":2,\"admin\":false,\"remark\":\"普通角色\",\"dataScope\":\"2\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"createTime\":1521171180000,\"updateBy\":\"admin\",\"roleKey\":\"common\",\"roleName\":\"普通角色\",\"menuIds\":[1061,1062,1063,4],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 23:10:15');
+INSERT INTO `sys_oper_log` VALUES ('163', '资源信息', '2', 'com.ruoyi.project.taowd.controller.ResourceListController.edit()', 'PUT', '1', 'admin', null, '/taowd/list', '192.168.1.103', '内网IP', '{\"ip\":\"7.88.20.205\",\"updateTime\":1598195841267,\"params\":{},\"type\":\"通讯\",\"createTime\":1598193531000,\"creater\":\"taowd00\",\"id\":1,\"status\":\"正常\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 23:17:23');
+INSERT INTO `sys_oper_log` VALUES ('164', '资源信息', '5', 'com.ruoyi.project.taowd.controller.ResourceListController.export()', 'GET', '1', 'admin', null, '/taowd/list/export', '192.168.1.103', '内网IP', '{}', '{\"msg\":\"3f4f2521-931a-4dcc-a5b8-4777c7b6213f_list.xlsx\",\"code\":200}', '0', null, '2020-08-23 23:18:56');
+INSERT INTO `sys_oper_log` VALUES ('165', '菜单管理', '1', 'com.ruoyi.project.system.controller.SysMenuController.add()', 'POST', '1', 'admin', null, '/system/menu', '192.168.1.103', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"1\",\"menuName\":\"状态修改\",\"params\":{},\"parentId\":1062,\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"F\",\"perms\":\"taowd:list:edit\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 23:24:30');
+INSERT INTO `sys_oper_log` VALUES ('166', '角色管理', '2', 'com.ruoyi.project.system.controller.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '192.168.1.103', '内网IP', '{\"flag\":false,\"roleId\":2,\"admin\":false,\"remark\":\"普通角色\",\"dataScope\":\"2\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"createTime\":1521171180000,\"updateBy\":\"admin\",\"roleKey\":\"common\",\"roleName\":\"普通角色\",\"menuIds\":[1061,1062,1063,1064,4],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 23:24:41');
+INSERT INTO `sys_oper_log` VALUES ('167', '菜单管理', '1', 'com.ruoyi.project.system.controller.SysMenuController.add()', 'POST', '1', 'admin', null, '/system/menu', '192.168.1.103', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"2\",\"menuName\":\"环境查询\",\"params\":{},\"parentId\":1062,\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"F\",\"perms\":\"taowd:list:query\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 23:28:51');
+INSERT INTO `sys_oper_log` VALUES ('168', '角色管理', '2', 'com.ruoyi.project.system.controller.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '192.168.1.103', '内网IP', '{\"flag\":false,\"roleId\":2,\"admin\":false,\"remark\":\"普通角色\",\"dataScope\":\"2\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"createTime\":1521171180000,\"updateBy\":\"admin\",\"roleKey\":\"common\",\"roleName\":\"普通角色\",\"menuIds\":[1061,1062,1063,1064,1065,4],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 23:29:00');
+INSERT INTO `sys_oper_log` VALUES ('169', '资源信息', '2', 'com.ruoyi.project.taowd.controller.ResourceListController.edit()', 'PUT', '1', 'admin', null, '/taowd/list', '192.168.1.103', '内网IP', '{\"ip\":\"7.88.20.205\",\"updateTime\":1598197002542,\"params\":{},\"type\":\"通讯\",\"createTime\":1598193531000,\"creater\":\"taowd00\",\"id\":1,\"status\":\"借用\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2020-08-23 23:36:44');
 
 -- ----------------------------
 -- Table structure for sys_post
@@ -543,7 +680,7 @@ CREATE TABLE `sys_role` (
 -- Records of sys_role
 -- ----------------------------
 INSERT INTO `sys_role` VALUES ('1', '管理员', 'admin', '1', '1', '0', '0', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '管理员');
-INSERT INTO `sys_role` VALUES ('2', '普通角色', 'common', '2', '2', '0', '0', 'admin', '2018-03-16 11:33:00', 'ry', '2018-03-16 11:33:00', '普通角色');
+INSERT INTO `sys_role` VALUES ('2', '普通角色', 'common', '2', '2', '0', '0', 'admin', '2018-03-16 11:33:00', 'admin', '2020-08-23 23:29:00', '普通角色');
 
 -- ----------------------------
 -- Table structure for sys_role_dept
@@ -575,89 +712,12 @@ CREATE TABLE `sys_role_menu` (
 -- ----------------------------
 -- Records of sys_role_menu
 -- ----------------------------
-INSERT INTO `sys_role_menu` VALUES ('2', '1');
-INSERT INTO `sys_role_menu` VALUES ('2', '2');
-INSERT INTO `sys_role_menu` VALUES ('2', '3');
 INSERT INTO `sys_role_menu` VALUES ('2', '4');
-INSERT INTO `sys_role_menu` VALUES ('2', '100');
-INSERT INTO `sys_role_menu` VALUES ('2', '101');
-INSERT INTO `sys_role_menu` VALUES ('2', '102');
-INSERT INTO `sys_role_menu` VALUES ('2', '103');
-INSERT INTO `sys_role_menu` VALUES ('2', '104');
-INSERT INTO `sys_role_menu` VALUES ('2', '105');
-INSERT INTO `sys_role_menu` VALUES ('2', '106');
-INSERT INTO `sys_role_menu` VALUES ('2', '107');
-INSERT INTO `sys_role_menu` VALUES ('2', '108');
-INSERT INTO `sys_role_menu` VALUES ('2', '109');
-INSERT INTO `sys_role_menu` VALUES ('2', '110');
-INSERT INTO `sys_role_menu` VALUES ('2', '111');
-INSERT INTO `sys_role_menu` VALUES ('2', '112');
-INSERT INTO `sys_role_menu` VALUES ('2', '113');
-INSERT INTO `sys_role_menu` VALUES ('2', '114');
-INSERT INTO `sys_role_menu` VALUES ('2', '115');
-INSERT INTO `sys_role_menu` VALUES ('2', '500');
-INSERT INTO `sys_role_menu` VALUES ('2', '501');
-INSERT INTO `sys_role_menu` VALUES ('2', '1000');
-INSERT INTO `sys_role_menu` VALUES ('2', '1001');
-INSERT INTO `sys_role_menu` VALUES ('2', '1002');
-INSERT INTO `sys_role_menu` VALUES ('2', '1003');
-INSERT INTO `sys_role_menu` VALUES ('2', '1004');
-INSERT INTO `sys_role_menu` VALUES ('2', '1005');
-INSERT INTO `sys_role_menu` VALUES ('2', '1006');
-INSERT INTO `sys_role_menu` VALUES ('2', '1007');
-INSERT INTO `sys_role_menu` VALUES ('2', '1008');
-INSERT INTO `sys_role_menu` VALUES ('2', '1009');
-INSERT INTO `sys_role_menu` VALUES ('2', '1010');
-INSERT INTO `sys_role_menu` VALUES ('2', '1011');
-INSERT INTO `sys_role_menu` VALUES ('2', '1012');
-INSERT INTO `sys_role_menu` VALUES ('2', '1013');
-INSERT INTO `sys_role_menu` VALUES ('2', '1014');
-INSERT INTO `sys_role_menu` VALUES ('2', '1015');
-INSERT INTO `sys_role_menu` VALUES ('2', '1016');
-INSERT INTO `sys_role_menu` VALUES ('2', '1017');
-INSERT INTO `sys_role_menu` VALUES ('2', '1018');
-INSERT INTO `sys_role_menu` VALUES ('2', '1019');
-INSERT INTO `sys_role_menu` VALUES ('2', '1020');
-INSERT INTO `sys_role_menu` VALUES ('2', '1021');
-INSERT INTO `sys_role_menu` VALUES ('2', '1022');
-INSERT INTO `sys_role_menu` VALUES ('2', '1023');
-INSERT INTO `sys_role_menu` VALUES ('2', '1024');
-INSERT INTO `sys_role_menu` VALUES ('2', '1025');
-INSERT INTO `sys_role_menu` VALUES ('2', '1026');
-INSERT INTO `sys_role_menu` VALUES ('2', '1027');
-INSERT INTO `sys_role_menu` VALUES ('2', '1028');
-INSERT INTO `sys_role_menu` VALUES ('2', '1029');
-INSERT INTO `sys_role_menu` VALUES ('2', '1030');
-INSERT INTO `sys_role_menu` VALUES ('2', '1031');
-INSERT INTO `sys_role_menu` VALUES ('2', '1032');
-INSERT INTO `sys_role_menu` VALUES ('2', '1033');
-INSERT INTO `sys_role_menu` VALUES ('2', '1034');
-INSERT INTO `sys_role_menu` VALUES ('2', '1035');
-INSERT INTO `sys_role_menu` VALUES ('2', '1036');
-INSERT INTO `sys_role_menu` VALUES ('2', '1037');
-INSERT INTO `sys_role_menu` VALUES ('2', '1038');
-INSERT INTO `sys_role_menu` VALUES ('2', '1039');
-INSERT INTO `sys_role_menu` VALUES ('2', '1040');
-INSERT INTO `sys_role_menu` VALUES ('2', '1041');
-INSERT INTO `sys_role_menu` VALUES ('2', '1042');
-INSERT INTO `sys_role_menu` VALUES ('2', '1043');
-INSERT INTO `sys_role_menu` VALUES ('2', '1044');
-INSERT INTO `sys_role_menu` VALUES ('2', '1045');
-INSERT INTO `sys_role_menu` VALUES ('2', '1046');
-INSERT INTO `sys_role_menu` VALUES ('2', '1047');
-INSERT INTO `sys_role_menu` VALUES ('2', '1048');
-INSERT INTO `sys_role_menu` VALUES ('2', '1049');
-INSERT INTO `sys_role_menu` VALUES ('2', '1050');
-INSERT INTO `sys_role_menu` VALUES ('2', '1051');
-INSERT INTO `sys_role_menu` VALUES ('2', '1052');
-INSERT INTO `sys_role_menu` VALUES ('2', '1053');
-INSERT INTO `sys_role_menu` VALUES ('2', '1054');
-INSERT INTO `sys_role_menu` VALUES ('2', '1055');
-INSERT INTO `sys_role_menu` VALUES ('2', '1056');
-INSERT INTO `sys_role_menu` VALUES ('2', '1057');
-INSERT INTO `sys_role_menu` VALUES ('2', '1058');
-INSERT INTO `sys_role_menu` VALUES ('2', '1059');
-INSERT INTO `sys_role_menu` VALUES ('2', '1060');
+INSERT INTO `sys_role_menu` VALUES ('2', '1061');
+INSERT INTO `sys_role_menu` VALUES ('2', '1062');
+INSERT INTO `sys_role_menu` VALUES ('2', '1063');
+INSERT INTO `sys_role_menu` VALUES ('2', '1064');
+INSERT INTO `sys_role_menu` VALUES ('2', '1065');
 
 -- ----------------------------
 -- Table structure for sys_user
@@ -691,7 +751,7 @@ CREATE TABLE `sys_user` (
 -- ----------------------------
 INSERT INTO `sys_user` VALUES ('1', '103', 'admin', 'Taowd', '00', 'taowd@outlook.com', '15769661234', '0', '/profile/avatar/2020/03/01/e18b953ca4119aa7b999d5e97a4d7983.jpeg', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', '2018-03-16 11:33:00', 'admin', '2018-03-16 11:33:00', 'ry', '2020-03-01 16:32:57', '管理员');
 INSERT INTO `sys_user` VALUES ('2', '106', 'ry', '若依', '00', 'ry@qq.com', '15666666666', '1', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', '2018-03-16 11:33:00', 'admin', '2018-03-16 11:33:00', 'admin', '2020-03-01 16:15:46', '测试员');
-INSERT INTO `sys_user` VALUES ('100', '103', 'test', '测试', '00', '', '15769229466', '0', '', '$2a$10$9DIkxd333Ej1zlDsVKlXTuG03cV1apBxR.WJ0Sowf19d7WsNkPXNC', '0', '0', '', null, 'admin', '2020-02-12 16:12:30', '', null, '测试用户');
+INSERT INTO `sys_user` VALUES ('100', '103', 'test', '测试', '00', '456456@outlook.com', '15769229466', '0', '', '$2a$10$.WlvM8hvxR.yvh1nwVNXjOVw1JsffgNRik4Osg6dAfM5fSxuZksN6', '0', '0', '', null, 'admin', '2020-02-12 16:12:30', 'admin', '2020-08-23 22:49:03', '测试用户');
 
 -- ----------------------------
 -- Table structure for sys_user_post
@@ -726,3 +786,23 @@ CREATE TABLE `sys_user_role` (
 INSERT INTO `sys_user_role` VALUES ('1', '1');
 INSERT INTO `sys_user_role` VALUES ('2', '2');
 INSERT INTO `sys_user_role` VALUES ('100', '2');
+
+-- ----------------------------
+-- Table structure for t_resource_list
+-- ----------------------------
+DROP TABLE IF EXISTS `t_resource_list`;
+CREATE TABLE `t_resource_list` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ip` varchar(255) DEFAULT NULL COMMENT '环境IP',
+  `type` varchar(255) DEFAULT NULL COMMENT '环境分类(传输/通讯)',
+  `status` varchar(255) DEFAULT NULL COMMENT '状态(正常/借用/停用)',
+  `creater` varchar(255) DEFAULT NULL COMMENT '创建人',
+  `createTime` datetime DEFAULT NULL COMMENT '创建时间',
+  `updateTime` datetime DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='资源信息表';
+
+-- ----------------------------
+-- Records of t_resource_list
+-- ----------------------------
+INSERT INTO `t_resource_list` VALUES ('1', '7.88.20.205', '通讯', '借用', 'taowd00', '2020-08-23 22:38:51', '2020-08-23 23:36:43');
